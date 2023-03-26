@@ -1,0 +1,7 @@
+# Make sure latest version of python is already installed on target system
+numpy
+tensorflow
+requests
+tensorflow_hub
+tempfile
+matplotlib
