@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello World!</title>
+    <!-- linking to PyScript assets -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2022.12.1/pyscript.css" />
+     <!-- <script defer src="https://pyscript.net/latest/pyscript.js"></script> -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+  	<button id="LoginBtn">login</button>
+  	<script>
+  		$("#LoginBtn").click(function (e){
+  		e.preventDefault();
+  		var settings = {
+        "url": "http://127.0.0.1:8000/CustomDesploy",
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": JSON.stringify({"image_left": "https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/N_-wj6-wx/bangkok-thailand-march-2016-early-morning-traffic-in-bangkok-no-traffic-jam_hxxfzhqqa_thumbnail-1080_01.png",
+                       "image_right": "https://c8.alamy.com/comp/FXY4EC/buses-cars-in-traffic-jam-baclaran-manila-philippines-05-may-2015-FXY4EC.jpg"}),
+    };
+    $.ajax({
+        ...settings,
+        success: function (result) {
+        	console.log(result)
+            alert("success")
+        },
+        error : function (){
+            alert("error")
+        }
+    })
+		})
+  	</script>
+  </body>
+</html>
